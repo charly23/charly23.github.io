@@ -10,7 +10,15 @@ body {
 }
 
 /** header **/
+#header-top .header-top__pad {
+    background: #dfdfdf;
+    padding: 5px;
+}
 
 /** container **/
 
 /** footer **/
+#footer-copy .footer-copy__pad {
+    background: #dfdfdf;
+    padding: 5px;
+}

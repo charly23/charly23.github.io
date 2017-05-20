@@ -5,20 +5,22 @@ html, body {
     margin: 0;
 }
 body {
-    background-color: #fff;    
+    background-color: #1a1a1a;    
     font-family: sans-serif;
 }
 
 /** header **/
 #header-top .header-top__pad {
-    background: #dfdfdf;
+    background: #232323;
     padding: 5px;
+    color: #fff;
 }
 
 /** container **/
 
 /** footer **/
 #footer-copy .footer-copy__pad {
-    background: #dfdfdf;
+    background: #232323;
     padding: 5px;
+    color: #fff;
 }

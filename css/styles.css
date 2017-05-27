@@ -18,6 +18,11 @@ body {
     font-weight: bold;
     font-size: 14px;
 }
+#header-top .header-top__pad .header-top__inner {
+    width: 960px;
+    margin: auto;
+    padding: 0px 5px;
+}
 #header-top .header-top__pad span.header-top__logo {
     display: inline-block;
     width: 100%;
@@ -76,6 +81,12 @@ body {
 }
 .home__pad.login-name-in.login-password-in {
     display: block;
+    width: 960px;
+    margin: auto;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    padding: 5px;
+    
 }
 
 /** footer **/

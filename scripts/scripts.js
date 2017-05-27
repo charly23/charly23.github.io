@@ -5,9 +5,12 @@ $(function()
 
         $( '.login__form .login__form-pad' ).on ( 'click', '.login__form-submit input', function()
             {
+                var $login_pad = '';
+                var $home_pad = '';
 
                 var $name = $( '.login__form-name input' );
                 if( $name.val().length !== 0 ) {
+                    $( '.home__inner-top .user-name' ).text( $name.val() );
                     $name.removeClass( 'form-name-validate' );
                     $nm_login = 1;
                 } else {

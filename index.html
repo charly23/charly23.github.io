@@ -2,8 +2,11 @@
 <head>
 	<meta http-equiv="content-type" content="text/html" />
 	<meta name="author" content="lolkittens" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<title>Charly Capillanes : Javascripts</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <!-- stylesheet -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
@@ -16,31 +19,50 @@
 
     <div id="header-top">
         <div class="header-top__pad">
-            Header Top
+            <span class="header-top__logo">Facemark</span>
         </div>
     </div>
 
     <div id="header">
-        <div class="header__pad">
-            Header
-        </div>
+        <div class="header__pad"></div>
     </div>
     
     <div id="content">
         <div class="content__pad">
-            <h1>Charly Capillanes</h1>
+
+            <!-- login-form -->
+            <div class="login__form">
+                <div class="login__form-pad">
+                    <div class="login__form-name">
+                        <label for="name">Name</label>
+                        <input type="text" class="login-name" value="" />
+                    </div>
+                    <div class="login__form-password">
+                        <label for="password">Password</label>
+                        <input type="password" class="login-password" value="" />
+                    </div>
+                    <div class="login__form-submit">
+                        <input type="submit" class="login-submit" value="Login" />
+                    </div>
+                </div>
+            </div><!-- login-form END -->
+            
+            <!-- home -->
+            <div class="home__pad">
+                Home Inner
+            </div><!-- home END -->
+
+
         </div>
     </div>
     
     <div id="footer">
-        <div class="footer__pad">
-            Footer
-        </div>
+        <div class="footer__pad"></div>
     </div>
 
     <div id="footer-copy">
         <div class="footer-copy__pad">
-            Footer Copy
+            <span class="footer-copy__name"></span>
         </div>
     </div>
 

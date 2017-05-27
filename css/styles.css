@@ -5,22 +5,92 @@ html, body {
     margin: 0;
 }
 body {
-    background-color: #1a1a1a;    
+    background-color: #fff;
     font-family: sans-serif;
+    font-size: 14px;
 }
 
 /** header **/
 #header-top .header-top__pad {
-    background: #232323;
+    background: #6495ed;
     padding: 5px;
     color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+#header-top .header-top__pad span.header-top__logo {
+    display: inline-block;
+    width: 100%;
+}
+#header .header__pad {
+    border-bottom: 1px solid #dedede;
+    padding: 5px;
 }
 
 /** container **/
 
+/** container - login-form **/
+.login__form {
+    display: block;
+    width: 240px;
+    margin: auto;
+}
+.login__form.login-name-in.login-password-in {
+    display: none;
+}
+.login__form .login__form-pad {
+    padding: 25px 0;
+}
+.login__form .login__form-pad .login__form-name,
+.login__form .login__form-pad .login__form-password {
+    margin-bottom: 15px;
+}
+.login__form .login__form-pad .login__form-name label,
+.login__form .login__form-pad .login__form-password label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.login__form .login__form-pad .login__form-name input,
+.login__form .login__form-pad .login__form-password input {
+    width: 100%;
+    padding: 5px;
+    background-color: #f0f8ff;
+    border: 0;
+}
+.login__form .login__form-pad .login__form-name input.form-name-validate,
+.login__form .login__form-pad .login__form-password input.form-password-validate {
+    background-color: #ffb6c1;
+}
+.login__form .login__form-pad .login__form-submit input {
+    background: #000;
+    color: #fff;
+    border: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/** container - home **/
+.home__pad {
+    display: none;
+}
+.home__pad.login-name-in.login-password-in {
+    display: block;
+}
+
 /** footer **/
+#footer .footer__pad {
+    border-top: 1px solid #dedede;
+    padding: 5px;
+}
 #footer-copy .footer-copy__pad {
-    background: #232323;
+    background: #6495ed;
     padding: 5px;
     color: #fff;
 }
+#footer-copy .footer-copy__pad span.footer-copy__name {
+    font-size: 12px;
+    display: inline-block;
+    width: 100%;
+}
+/** media **/

@@ -3,6 +3,15 @@ $(function()
         var $user_data = {'nm':'admin', 'pw':'admin'};
         var $error_message = {'empty':'', 'wrong-password':'' };
 
+        function add_class_pad_element ( $nm=0, $pw=0) 
+        {
+            if( $nm == 1 && $pw == 1 ) {
+                $( '#header-top' ).addClass( 'header-in' );
+            } else {
+                $( '#header-top' ).removeClass( 'header-in' );
+            }
+        }
+
         $( '.login__form .login__form-pad' ).on ( 'click', '.login__form-submit input', function()
             {
                 var $login_pad = '';
@@ -10,6 +19,7 @@ $(function()
 
                 var $name = $( '.login__form-name input' );
                 if( $name.val().length !== 0 && $name.val() == $user_data['nm'] ) {
+                    $( '#header-top .top-menu ul.menu-item li.menu-item-name span' ).text( $name.val() );
                     $( '.home__inner-top .user-name' ).text( $name.val() );
                     $name.removeClass( 'form-name-validate' );
                     $nm_login = 1;
@@ -43,6 +53,25 @@ $(function()
                     $( '.home__pad' ).removeClass( 'login-password-in' );
                 }
 
+                add_class_pad_element( $nm_login, $pw_login );
+
+                return false;
+            } 
+        );
+
+        $( '.home-page' ).on( 'click', '#header-top.header-in .top-menu .menu-item-logout span', function()
+            {
+                var $empty = '';
+
+                $( '.login__form' ).removeClass( 'login-name-in' );
+                $( '.home__pad' ).removeClass( 'login-name-in' );
+
+                $( '.login__form-name input' ).val($empty);
+                $( '.login__form-password input[type="password"]' ).val('');
+
+                $( '#header-top' ).removeClass( 'header-in' );
+                $( '#header-top .top-menu' ).hide();
+
                 return false;
             } 
         );
@@ -61,6 +90,18 @@ $(function()
                     $( '.login__form-submit input' ).click();
                 }
             }
+        );
+
+        $( '.home-page' ).on( 'click', '#header-top.header-in span.header-top__logo', function()
+            {
+                if( $(this).next().is( ':visible' ) == true ) {
+                    $(this).next().hide();
+                } else {
+                    $(this).next().show();
+                }
+
+                return false;
+            } 
         );
 
         // END

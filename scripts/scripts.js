@@ -6,8 +6,10 @@ $(function()
         function add_class_pad_element ( $nm=0, $pw=0) 
         {
             if( $nm == 1 && $pw == 1 ) {
+                $( 'body.home-page' ).addClass( 'home-log-in' );
                 $( '#header-top' ).addClass( 'header-in' );
             } else {
+                $( 'body.home-page' ).removeClass( 'home-log-in' );
                 $( '#header-top' ).removeClass( 'header-in' );
             }
         }

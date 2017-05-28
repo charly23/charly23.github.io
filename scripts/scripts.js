@@ -65,11 +65,13 @@ $(function()
             {
                 var $empty = '';
 
+                $( 'body.home-page' ).removeClass( 'home-log-in' );
+
                 $( '.login__form' ).removeClass( 'login-name-in' );
                 $( '.home__pad' ).removeClass( 'login-name-in' );
 
                 $( '.login__form-name input' ).val($empty);
-                $( '.login__form-password input[type="password"]' ).val('');
+                $( '.login__form-password input[type="password"]' ).val($empty);
 
                 $( '#header-top' ).removeClass( 'header-in' );
                 $( '#header-top .top-menu' ).hide();

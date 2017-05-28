@@ -1,6 +1,6 @@
 $(function()
     {
-        
+        var $user_data = {'nm':'admin', 'pw':'admin'};
         var $error_message = {'empty':'', 'wrong-password':'' };
 
         $( '.login__form .login__form-pad' ).on ( 'click', '.login__form-submit input', function()
@@ -9,7 +9,7 @@ $(function()
                 var $home_pad = '';
 
                 var $name = $( '.login__form-name input' );
-                if( $name.val().length !== 0 ) {
+                if( $name.val().length !== 0 && $name.val() == $user_data['nm'] ) {
                     $( '.home__inner-top .user-name' ).text( $name.val() );
                     $name.removeClass( 'form-name-validate' );
                     $nm_login = 1;
@@ -19,7 +19,7 @@ $(function()
                 }
 
                 var $password = $( '.login__form-password input' );
-                if( $password.val().length !== 0 ) {
+                if( $password.val().length !== 0 && $password.val() == $user_data['pw'] ) {
                     $password.removeClass( 'form-password-validate' );
                     $pw_login = 1;
                 } else {
@@ -47,7 +47,21 @@ $(function()
             } 
         );
 
-        console.log( 'scripts-loader' );
+        $( '.login__form-name' ).on( 'keydown', 'input.login-name', function(event)
+            {
+                if( event.which == 13 ) {
+                    $( '.login__form-submit input' ).click();
+                }
+            }
+        );
+
+        $( '.login__form-password' ).on( 'keydown', 'input.login-password', function(event)
+            {
+                if( event.which == 13 ) {
+                    $( '.login__form-submit input' ).click();
+                }
+            }
+        );
 
         // END
     }

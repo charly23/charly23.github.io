@@ -1,3 +1,1 @@
-us:admin,pw:admin
-us:charly,pw:charly
-us:edjeen,pw:edjeen
+us:admin/pw:admin|us:charly/pw:charly|us:edjeen/pw:edjeen

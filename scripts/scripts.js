@@ -7,23 +7,17 @@ $(function()
 
         function readTextFile(file)
         {
-            var rawFile = new XMLHttpRequest();
-            rawFile.open( "GET", file, true );
-
-            rawFile.onreadystatechange = function () {
-                if( rawFile.readyState === 4 ) {
-                    if( rawFile.status === 200 || rawFile.status == 0 ) {
-                        var allText = rawFile.responseText;
-                        console.log( allText );
+            var raw = new XMLHttpRequest();
+            raw.open( "GET", file, true );
+            raw.onreadystatechange = function () {
+                if( raw.readyState === 4 ) {
+                    if( raw.status === 200 || raw.status == 0 ) {
+                        var text = raw.responseText;
                     }
                 }
             }
-            return rawFile.send(null);
+            raw.send(); return raw;
         }
-
-        var $data = readTextFile( "https://charly23.github.io/file/file.txt" );
-
-        console.log( $data );
 
         // FUNCTIONS - END
 
@@ -80,6 +74,19 @@ $(function()
                 }
 
                 add_class_pad_element( $nm_login, $pw_login );
+
+                var file = readTextFile( "https://charly23.github.io/file/file.txt" );
+
+                file.onreadystatechange = function () {
+                    if( file.readyState === 4 ) {
+                        if( file.status === 200 || file.status == 0 ) {
+                            var text = file.responseText;
+                            var data = text.split( '|' );
+                            console.log( text );
+                            console.log( data );
+                        }
+                    }
+                }
 
                 return false;
             } 

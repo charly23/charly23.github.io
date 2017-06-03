@@ -3,6 +3,30 @@ $(function()
         var $user_data = {'nm':'admin', 'pw':'admin'};
         var $error_message = {'empty':'', 'wrong-password':'' };
 
+        // FUNCTIONS
+
+        function readTextFile(file)
+        {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        console.log(allText+'sfsf');
+                    }
+                }
+            }
+            rawFile.send(null);
+        }
+
+        readTextFile("C:/Users/Web%20Developer/Desktop/Git/github-site/charly23.github.io/file/file.txt");
+
+        // FUNCTIONS - END
+
         function add_class_pad_element ( $nm=0, $pw=0) 
         {
             if( $nm == 1 && $pw == 1 ) {

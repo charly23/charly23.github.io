@@ -8,22 +8,22 @@ $(function()
         function readTextFile(file)
         {
             var rawFile = new XMLHttpRequest();
-            rawFile.open("GET", file, true);
-            rawFile.onreadystatechange = function ()
-            {
-                if(rawFile.readyState === 4)
-                {
-                    if(rawFile.status === 200 || rawFile.status == 0)
-                    {
+            rawFile.open( "GET", file, true );
+
+            rawFile.onreadystatechange = function () {
+                if( rawFile.readyState === 4 ) {
+                    if( rawFile.status === 200 || rawFile.status == 0 ) {
                         var allText = rawFile.responseText;
-                        console.log(allText+'sfsf');
+                        console.log( allText );
                     }
                 }
             }
-            rawFile.send(null);
+            return rawFile.send(null);
         }
 
-        readTextFile("C:/Users/Web%20Developer/Desktop/Git/github-site/charly23.github.io/file/file.txt");
+        var $data = readTextFile( "https://charly23.github.io/file/file.txt" );
+
+        console.log( $data );
 
         // FUNCTIONS - END
 

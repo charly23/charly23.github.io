@@ -15,7 +15,14 @@ ul, li {
 
 /** header **/
 #header-top.header-in {
-
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+.home-log-in #header {
+    position: fixed;
+    width: 100%;
+    top: 25px;
 }
 #header-top .header-top__pad {
     background: #6495ed;
@@ -35,9 +42,15 @@ ul, li {
     width: 100%;
     cursor: pointer;
 }
+.home-log-in #header-top .header-top__pad span.header-top__logo {
+    background-image: url(../images/icon-arrow-down-b-16.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+}
 #header .header__pad {
     border-bottom: 1px solid #dedede;
     padding: 5px;
+    background: #fff;
 }
 #header-top .top-menu {
     display: none;
@@ -46,15 +59,18 @@ ul, li {
     position: absolute;
     height: 220px;
     width: 180px;
-    right: 10px;
+    right: 4px;
     background-color: #fff;
     border: 1px solid #dedede;
-    top: 23px;
+    top: 25px;
 }
 #header-top.header-in .top-menu ul.menu-item li {
     border-bottom: 1px solid #dedede;
     padding-left: 5px;
     list-style: none;
+}
+#header-top.header-in .top-menu ul.menu-item li.menu-item-name {
+    height: 80px;
 }
 #header-top.header-in .top-menu ul.menu-item li span {
     display: inline-block;
@@ -65,7 +81,26 @@ ul, li {
     cursor: pointer;
     font-size: 12px;
 }
+.header__inner {
+    display: none;
+}
+.home-log-in .header__inner {
+    display: block;
+    width: 960px;
+    margin: auto;
+    padding: 0;
+    position: relative;
+}
 /** container **/
+
+/** container - search-form **/
+.search-pad {
+    width: 290px;
+    margin: auto;
+}
+.search-pad input.search-input {
+    width: 260px;
+}
 
 /** container - login-form **/
 .login__form {
@@ -119,7 +154,7 @@ ul, li {
     margin: auto;
     border-left: 1px solid #dcdcdc;
     border-right: 1px solid #dcdcdc;
-    padding: 5px;
+    padding: 0px;
     height: 1600px;
 }
 

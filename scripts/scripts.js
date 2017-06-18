@@ -78,20 +78,28 @@ $(function()
                 var file = readTextFile( "https://charly23.github.io/file/file.txt" );
 
                 file.onreadystatechange = function () {
-                    if( file.readyState === 4 ) {
-                        if( file.status === 200 || file.status == 0 ) {
+
+                    if ( file.readyState === 4 ) { if ( file.status === 200 || file.status == 0 ) {
+
                             var text = file.responseText;
                             var data = text.split( '|' );
-                            for (d_i = 0; d_i < data.length; d_i++) {
+
+                            for ( d_i = 0; d_i < data.length; d_i++ ) 
+                            {
                                 var user = data[d_i].split( '/' );
-                                for (u_i = 0; u_i < user.length; u_i++) {
+                                for ( u_i = 0; u_i < user.length; u_i++ ) 
+                                {
                                     var user_data = user[u_i].split( ':' );
-                                    if( $name.val() == user_data[1] )
-                                    console.log( user_data );
+                                    if( $name.val() == user_data[1] ) {
+                                        console.log( user_data );
+                                    }
                                 }
                             }
+
                         }
                     }
+
+                    // END
                 }
 
                 return false;

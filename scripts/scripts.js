@@ -82,8 +82,14 @@ $(function()
                         if( file.status === 200 || file.status == 0 ) {
                             var text = file.responseText;
                             var data = text.split( '|' );
-                            console.log( text );
-                            console.log( data );
+                            for (d_i = 0; d_i < data.length; d_i++) {
+                                var user = data[d_i].split( '/' );
+                                for (u_i = 0; u_i < user.length; u_i++) {
+                                    var user_data = user[u_i].split( ':' );
+                                    if( $name.val() == user_data[1] )
+                                    console.log( user_data );
+                                }
+                            }
                         }
                     }
                 }

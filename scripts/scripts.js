@@ -109,6 +109,8 @@ $(function()
             } 
         );
 
+        /** -- form cntrl -- **/
+
         $( '.home-page' ).on( 'click', '#header-top.header-in .top-menu .menu-item-logout span', function()
             {
                 var $empty = '';
@@ -116,8 +118,13 @@ $(function()
                 $( 'body.home-page' ).removeClass( 'home-log-in' );
 
                 $( '.login__form' ).removeClass( 'login-name-in' );
-                $( '.home__pad' ).removeClass( 'login-name-in' );
 
+                $( '.home__pad' ).removeClass( 'login-name-in' );
+                $( '.home__pad' ).hide();
+
+                $( '.account__pad' ).removeClass( 'login-name-in' );
+                $( '.account__pad' ).hide();
+                
                 $( '.login__form-name input' ).val($empty);
                 $( '.login__form-password input[type="password"]' ).val($empty);
 
@@ -144,6 +151,8 @@ $(function()
                 }
             }
         );
+
+        /** -- form cntrl - END -- **/
 
         $( '.home-page' ).on( 'click', '#header-top.header-in span.header-top__logo', function()
             {

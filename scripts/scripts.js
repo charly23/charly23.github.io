@@ -40,7 +40,6 @@ $(function()
                 var $name = $( '.login__form-name input' );
                 if( $name.val().length !== 0 && $name.val() == $user_data['nm'] ) {
                     $( '#header-top .top-menu ul.menu-item li.menu-item-name span' ).text( $name.val() );
-                    $( '.home__inner-top .user-name' ).text( $name.val() );
                     $name.removeClass( 'form-name-validate' );
                     $nm_login = 1;
                 } else {
@@ -60,24 +59,29 @@ $(function()
                 if( $nm_login == 1 ) {
                     $( '.login__form' ).addClass( 'login-name-in' );
                     $( '.home__pad' ).addClass( 'login-name-in' );
+                    $( '.account__pad' ).addClass( 'login-name-in' );
                 } else {
                     $( '.login__form' ).removeClass( 'login-name-in' );
                     $( '.home__pad' ).removeClass( 'login-name-in' );
+                    $( '.account__pad' ).removeClass( 'login-name-in' );
                 }
 
                 if( $pw_login == 1 ) {
                     $( '.login__form' ).addClass( 'login-password-in' );
                     $( '.home__pad' ).addClass( 'login-password-in' );
+                    $( '.account__pad' ).addClass( 'login-password-in' );
                 } else {
                     $( '.login__form' ).removeClass( 'login-password-in' );
                     $( '.home__pad' ).removeClass( 'login-password-in' );
+                    $( '.account__pad' ).removeClass( 'login-password-in' );
                 }
 
                 add_class_pad_element( $nm_login, $pw_login );
 
                 var file = readTextFile( "https://charly23.github.io/file/file.txt" );
 
-                file.onreadystatechange = function () {
+                file.onreadystatechange = function () 
+                {
 
                     if ( file.readyState === 4 ) { if ( file.status === 200 || file.status == 0 ) {
 
@@ -95,7 +99,6 @@ $(function()
                                     }
                                 }
                             }
-
                         }
                     }
 
@@ -125,6 +128,7 @@ $(function()
             } 
         );
 
+
         $( '.login__form-name' ).on( 'keydown', 'input.login-name', function(event)
             {
                 if( event.which == 13 ) {
@@ -148,9 +152,21 @@ $(function()
                 } else {
                     $(this).next().show();
                 }
-
                 return false;
             } 
+        );
+
+        $( '.header-top__inner' ).on( 'click', 'span.header-top__home', function()
+            {
+                $( '.home__pad.login-name-in.login-password-in' ).show();
+                $( '.account__pad.login-name-in.login-password-in' ).hide();
+            }
+        );
+        $( 'ul.menu-item' ).on( 'click', 'li.menu-item-profile span.item-profile', function()
+            {
+                $( '.home__pad.login-name-in.login-password-in' ).hide();
+                $( '.account__pad.login-name-in.login-password-in' ).show();
+            }
         );
 
         // END

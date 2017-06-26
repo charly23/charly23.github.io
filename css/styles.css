@@ -12,6 +12,9 @@ ul, li {
     padding: 0;
     margin: 0;
 }
+.home-page.home-log-in #content {
+    padding-top: 55px;
+}
 
 /** header **/
 #header-top.header-in {
@@ -44,7 +47,7 @@ ul, li {
 }
 .home-log-in #header-top .header-top__pad span.header-top__logo {
     background-image: url(../images/icon-arrow-down-b-16.png);
-    background-position: center right;
+    background-position: right 0px;
     background-repeat: no-repeat;
 }
 #header .header__pad {
@@ -52,8 +55,18 @@ ul, li {
     padding: 5px;
     background: #fff;
 }
-#header-top .top-menu {
+#header-top .top-menu,
+#header-top .header-top__home {
     display: none;
+}
+
+/** -- header(in) -- **/
+#header-top.header-in .header-top__home {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    cursor: pointer;
 }
 #header-top.header-in .top-menu {
     position: absolute;
@@ -91,7 +104,6 @@ ul, li {
     padding: 0;
     position: relative;
 }
-
 /** container **/
 
 /** container - search-form **/
@@ -107,10 +119,10 @@ ul, li {
 .login__form {
     display: block;
     width: 240px;
-    border-right: 1px solid #dedede;
     padding: 0px 30px 0px 20px;
-    border-left: 1px solid #dedede;
     margin: auto;
+    border: 1px solid #dedede;
+    margin-top: 45px;
 }
 .login__form.login-name-in.login-password-in {
     display: none;
@@ -173,7 +185,33 @@ ul, li {
     border-right: 1px solid #dedede;
 }
 
+/** -- container - account -- **/
+.account__pad {
+    display: none;
+}
+.account__pad.login-name-in.login-password-in {
+    width: 1200px;
+    margin: auto;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    padding: 0px;
+    height: 1600px;
+}
+.account__pad.login-name-in.login-password-in .account__inner-middle {
+    height: 100%;
+    width: 100%;
+}
+.account__pad.login-name-in.login-password-in .account__inner-middle .account__middle-left {
+    float: left;
+    height: 100%;
+    width: 190px;
+    border-right: 1px solid #dedede;
+}
+
 /** footer **/
+#footer {
+    margin-top: 55px;
+}
 #footer .footer__pad {
     border-top: 1px solid #dedede;
     padding: 5px;

@@ -124,7 +124,7 @@ $(function()
 
                 $( '.account__pad' ).removeClass( 'login-name-in' );
                 $( '.account__pad' ).hide();
-                
+
                 $( '.login__form-name input' ).val($empty);
                 $( '.login__form-password input[type="password"]' ).val($empty);
 
@@ -134,7 +134,6 @@ $(function()
                 return false;
             } 
         );
-
 
         $( '.login__form-name' ).on( 'keydown', 'input.login-name', function(event)
             {
